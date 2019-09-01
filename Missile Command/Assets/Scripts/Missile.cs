@@ -7,7 +7,8 @@ public class Missile : MonoBehaviour
     [SerializeField]
     Vector3 targetPos;
     Rigidbody2D rb2d;
-    float speedModifier = 1;
+    float speedModifier = 1f;
+    float missileLifeSpan = 3f;
     
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class Missile : MonoBehaviour
 
         rb2d.AddRelativeForce(targetPos*speedModifier, ForceMode2D.Impulse);
 
+        Destroy(this.gameObject, missileLifeSpan);
     }
 
     // Update is called once per frame

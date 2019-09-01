@@ -29,11 +29,19 @@ public class Silo : MonoBehaviour
     {
         //Get Mouse Position
         Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
-        //Spawn a missle 
-        GameObject newMissile =  Instantiate(missilePrefab, launchPosition, Quaternion.identity);
-        //Set Target
-        newMissile.GetComponent<Missile>().SetTarget(mousePos);
-
+        
+        if(mousePos.y > 2.0)
+        {
+            //Spawn a missle 
+            GameObject newMissile = Instantiate(missilePrefab, launchPosition, Quaternion.identity);
+            //Set Target
+            newMissile.GetComponent<Missile>().SetTarget(mousePos);
+        }
+        else
+        {
+            Debug.Log("Cannot fire into ground.  Launch aborted.");
+        }
+   
     }
 }
 
