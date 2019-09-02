@@ -11,6 +11,7 @@ public class EnemyMissile : MonoBehaviour
     [SerializeField]
     float speedModifier = 1f;
 
+
     public void SetTarget(Vector3 target)
     {
         targetPos = target;
@@ -18,7 +19,7 @@ public class EnemyMissile : MonoBehaviour
 
     public void ApplyForce()
     {
-        //rb2d.AddForce(targetPos * speedModifier, ForceMode2D.Impulse);
-        rb2d.AddRelativeForce(transform.up);
+        rb2d.AddRelativeForce((Vector2)(targetPos - this.transform.position).normalized * speedModifier, ForceMode2D.Impulse);
+
     }
 }

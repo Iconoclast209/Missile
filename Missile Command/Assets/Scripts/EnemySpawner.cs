@@ -32,25 +32,25 @@ public class EnemySpawner : MonoBehaviour
 
     void LaunchEnemyMissile()
     {
-        Vector2 spawnPos = DetermineSpawnPoint();
-        Vector3 target = DetermineTargetPoint();
-
-        Instantiate(enemyMissilePrefab, spawnPos, Quaternion.identity);
-        EnemyMissile enemyMissile = enemyMissilePrefab.GetComponent<EnemyMissile>();
-        enemyMissile.SetTarget(target);
-        enemyMissile.ApplyForce();
+        Vector3 spawnPos = DetermineSpawnPoint();
+        Vector3 targetPos = DetermineTargetPoint();
+        //Quaternion quat = Quaternion.FromToRotation(Vector3.up, (targetPos - transform.position).normalized);
+        GameObject enemyMissile = Instantiate(enemyMissilePrefab, spawnPos, Quaternion.identity);
+        enemyMissile.GetComponent<Transform>().rotation = Quaternion.FromToRotation(Vector3.up, (targetPos - enemyMissile.transform.position).normalized);
+        enemyMissile.GetComponent<EnemyMissile>().SetTarget(targetPos);
+        enemyMissile.GetComponent<EnemyMissile>().ApplyForce();
     }
 
-    Vector2 DetermineSpawnPoint()
+    Vector3 DetermineSpawnPoint()
     {
-        float x = Random.Range(-ScreenUtils.ScreenRight, ScreenUtils.ScreenRight);
-        float y = ScreenUtils.ScreenTop + 1;
-        return new Vector2(x, y);
+        float x = Random.Range(ScreenUtils.ScreenLeft, ScreenUtils.ScreenRight);
+           
+        return new Vector3(x, 12,0);
     }
 
     Vector3 DetermineTargetPoint()
     {
         float x = Random.Range(ScreenUtils.ScreenLeft, ScreenUtils.ScreenRight);
-        return new Vector3(x,0,-10);
+        return new Vector3(x, -12,0);
     }
 }
