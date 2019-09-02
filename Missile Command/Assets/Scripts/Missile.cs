@@ -8,7 +8,7 @@ public class Missile : MonoBehaviour
     Vector3 targetPos;
     Rigidbody2D rb2d;
     float speedModifier = 1f;
-    float missileLifeSpan = 3f;
+    float missileLifeSpan = 4f;
     
     // Start is called before the first frame update
     void Start()
@@ -20,15 +20,9 @@ public class Missile : MonoBehaviour
         Destroy(this.gameObject, missileLifeSpan);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetTarget(Vector3 target)
     {
-        Debug.Log("Setting Target");
+        Debug.Log("Setting Target for " + this.name);
         targetPos = target;
         this.transform.rotation = Quaternion.LookRotation(Vector3.forward, target - this.transform.position);
     }

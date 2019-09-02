@@ -14,7 +14,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="Skylines.svg">
   <defs
      id="defs2" />
@@ -27,7 +27,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
      inkscape:cx="-3120.0051"
-     inkscape:cy="1322.112"
+     inkscape:cy="594.80217"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -188,36 +188,33 @@
        inkscape:export-xdpi="29.799999"
        inkscape:export-ydpi="29.799999" />
     <g
-       id="g862"
-       inkscape:export-filename="C:\Users\antho\Desktop\Silo2.png"
-       inkscape:export-xdpi="29.799999"
-       inkscape:export-ydpi="29.799999">
-      <g
-         transform="translate(15.667441,11.367936)"
-         id="g856">
-        <path
-           style="opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.78999996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-           d="m -613.73962,200.41528 a 39.999999,39.999999 0 0 0 -40.00014,40.00014 h 40.00014 40.00015 a 39.999999,39.999999 0 0 0 -40.00015,-40.00014 z"
-           id="path841"
-           inkscape:connector-curvature="0" />
-        <path
-           inkscape:connector-curvature="0"
-           style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.78999996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-           d="m -613.73937,200.41528 a 39.999999,39.999999 0 0 0 -40.00013,40.00014 h 3.70417 a 39.999999,39.999999 0 0 1 38.46536,-39.92314 39.999999,39.999999 0 0 0 -2.1694,-0.077 z"
-           id="path852" />
-      </g>
-      <rect
-         ry="0"
-         y="251.78336"
-         x="-768.53943"
-         height="39.309525"
-         width="340.93451"
-         id="rect843"
-         style="opacity:1;fill:#deaa87;fill-opacity:1;stroke:none;stroke-width:0.78999996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         inkscape:export-filename="C:\Users\antho\Desktop\brown rect.png"
-         inkscape:export-xdpi="29.799999"
-         inkscape:export-ydpi="29.799999" />
+       id="g856"
+       transform="translate(15.667441,11.367936)"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Silo no ground.png"
+       inkscape:export-xdpi="31.75"
+       inkscape:export-ydpi="31.75">
+      <path
+         inkscape:connector-curvature="0"
+         id="path841"
+         d="m -613.73962,200.41528 a 39.999999,39.999999 0 0 0 -40.00014,40.00014 h 40.00014 40.00015 a 39.999999,39.999999 0 0 0 -40.00015,-40.00014 z"
+         style="opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.78999996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         id="path852"
+         d="m -613.73937,200.41528 a 39.999999,39.999999 0 0 0 -40.00013,40.00014 h 3.70417 a 39.999999,39.999999 0 0 1 38.46536,-39.92314 39.999999,39.999999 0 0 0 -2.1694,-0.077 z"
+         style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.78999996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
     </g>
+    <rect
+       inkscape:export-ydpi="29.799999"
+       inkscape:export-xdpi="29.799999"
+       inkscape:export-filename="C:\Users\antho\Desktop\brown rect.png"
+       style="opacity:1;fill:#deaa87;fill-opacity:1;stroke:none;stroke-width:0.78999996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect843"
+       width="340.93451"
+       height="39.309525"
+       x="-768.53943"
+       y="251.78336"
+       ry="0" />
     <g
        id="g973"
        inkscape:export-filename="C:\Users\antho\Desktop\SF Skyline.png"
@@ -348,5 +345,24 @@
          x="-959.94781"
          y="-63.201427" />
     </g>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:export-ydpi="25.4"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\missile red.png"
+       id="path4618"
+       d="m -653.28628,140.41063 a 10,10 0 0 0 -9.9999,9.9999 v 40.00014 h 20.00033 v -40.00014 a 10,10 0 0 0 -10.00043,-9.9999 z"
+       style="opacity:1;fill:#aa0000;fill-opacity:1;stroke:none;stroke-width:0.78999996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       ry="0"
+       y="251.78336"
+       x="-1220.225"
+       height="39.309525"
+       width="340.93451"
+       id="rect4624"
+       style="opacity:1;fill:#000098;fill-opacity:1;stroke:none;stroke-width:0.78999996;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\blue rect.png"
+       inkscape:export-xdpi="29.799999"
+       inkscape:export-ydpi="29.799999" />
   </g>
 </svg>

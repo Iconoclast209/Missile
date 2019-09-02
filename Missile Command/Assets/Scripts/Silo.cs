@@ -6,7 +6,7 @@ public class Silo : MonoBehaviour
 {
 
     public GameObject missilePrefab;
-    private Vector3 launchPosition = new Vector3(0f, 0f, 0f);
+    private Vector3 launchPosition = new Vector3(0f, 0.1f, 0f);
     Camera camera;
 
 
@@ -29,8 +29,9 @@ public class Silo : MonoBehaviour
     {
         //Get Mouse Position
         Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log("Mouse position at click is " + mousePos.ToString());
         
-        if(mousePos.y > 2.0)
+        if(mousePos.y > 1.9)
         {
             //Spawn a missle 
             GameObject newMissile = Instantiate(missilePrefab, launchPosition, Quaternion.identity);
@@ -44,8 +45,3 @@ public class Silo : MonoBehaviour
    
     }
 }
-
-/*Rotate Pointer towards mouse
-Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-*/
