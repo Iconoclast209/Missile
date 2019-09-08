@@ -20,6 +20,11 @@ public class EnemyMissile : MonoBehaviour
     public void ApplyForce()
     {
         rb2d.AddRelativeForce((Vector2)(targetPos - this.transform.position).normalized * speedModifier, ForceMode2D.Impulse);
+    }
 
+    public void DestroyEnemyMissile()
+    {
+        //Game Manager Communication
+        Destroy(this.gameObject);
     }
 }

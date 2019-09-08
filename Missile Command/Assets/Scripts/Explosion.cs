@@ -28,4 +28,19 @@ public class Explosion : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        EnemyMissile enemy = other.gameObject.GetComponent<EnemyMissile>();
+        Missile missile = other.gameObject.GetComponent<Missile>();
+        if (enemy != null)
+        {
+            enemy.DestroyEnemyMissile(); 
+        }
+        if(missile != null)
+        {
+            missile.Explode();
+        }
+
+    }
 }

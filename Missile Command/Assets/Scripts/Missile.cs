@@ -17,12 +17,8 @@ public class Missile : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-
         rb2d.AddRelativeForce(targetPos*speedModifier, ForceMode2D.Impulse);
-
         Destroy(this.gameObject, missileLifeSpan);
-
-        Debug.Log("Target Location:  " + targetPos.ToString() + " Current Location:  " + transform.position.ToString());
     }
 
     private void Update()
@@ -32,7 +28,6 @@ public class Missile : MonoBehaviour
 
     public void SetTarget(Vector3 target)
     {
-        Debug.Log("Setting Target for " + this.name);
         targetPos = target;
         this.transform.rotation = Quaternion.LookRotation(Vector3.forward, target - this.transform.position);
     }
@@ -44,7 +39,6 @@ public class Missile : MonoBehaviour
         //Debug.Log("xDiff " + xDifference.ToString() + " yDiff " + yDifference.ToString());
         if(xDifference < explosionOffset && yDifference < explosionOffset)
         {
-            Debug.Log("BOOM!!!");
             Explode();
         }
     }
@@ -53,12 +47,11 @@ public class Missile : MonoBehaviour
     {
         if(other.gameObject.GetComponent<EnemyMissile>() != null)
         {
-            Debug.Log("missiles collided.");
             Explode();
         }
     }
 
-    void Explode()
+    public void Explode()
     {
         //Instantiate the explosion
         GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);

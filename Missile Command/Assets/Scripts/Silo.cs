@@ -29,7 +29,6 @@ public class Silo : MonoBehaviour
     {
         //Get Mouse Position
         Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log("Mouse position at click is " + mousePos.ToString());
         
         if(mousePos.y > 1.9)
         {
