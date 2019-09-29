@@ -10,7 +10,12 @@ public class EnemyMissile : MonoBehaviour
     Rigidbody2D rb2d;
     [SerializeField]
     float speedModifier = 1f;
+    GameManager gm;
 
+    private void Start()
+    {
+        gm = FindObjectOfType<GameManager>().GetComponent<GameManager>();
+    }
 
     public void SetTarget(Vector3 target)
     {
@@ -24,7 +29,7 @@ public class EnemyMissile : MonoBehaviour
 
     public void DestroyEnemyMissile()
     {
-        //Game Manager Communication
+        gm.MissileDestroyed();
         Destroy(this.gameObject);
     }
 }
