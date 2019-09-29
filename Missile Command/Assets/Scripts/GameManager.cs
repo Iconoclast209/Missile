@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     Text textMissilesDestroyed;
+    [SerializeField]
+    GameObject cityDestroyedMessage;
     int missilesDestroyed = 0;
+    float cityDestroyedMessageViewLength = 3.0f;
 
 
     private void Awake()
@@ -35,5 +38,18 @@ public class GameManager : MonoBehaviour
     {
         missilesDestroyed++;
         textMissilesDestroyed.text = missilesDestroyed.ToString();
+    }
+
+    public void CityDestroyed(string city)
+    {
+        cityDestroyedMessage.GetComponent<Text>().text = city + " has been destroyed!";
+        cityDestroyedMessage.SetActive(true);
+        Invoke("HideCityDestroyedMessage", cityDestroyedMessageViewLength);
+    }
+
+    private void HideCityDestroyedMessage()
+    {
+        cityDestroyedMessage.SetActive(false);
+        cityDestroyedMessage.GetComponent<Text>().text = "";
     }
 }
