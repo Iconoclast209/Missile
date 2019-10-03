@@ -7,11 +7,16 @@ public class City : MonoBehaviour
 {
     [SerializeField]
     string cityName;
+    [SerializeField]
+    Sprite destroyedCity;
+    SpriteRenderer sr;
     GameManager gm;
+
 
     private void Start()
     {
-        gm = FindObjectOfType<GameManager>(); 
+        gm = FindObjectOfType<GameManager>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,6 +27,7 @@ public class City : MonoBehaviour
             gm.CityDestroyed(cityName);
 
             //Destroy City
+            sr.sprite = destroyedCity;
         }
     }
 }

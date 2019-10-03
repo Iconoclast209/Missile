@@ -6,7 +6,7 @@ public class Silo : MonoBehaviour
 {
 
     public GameObject missilePrefab;
-    private Vector3 launchPosition = new Vector3(0f, 0.1f, 0f);
+    private Vector3 launchPosition = new Vector3(0f, 0.4f, 0f);
     Camera camera;
 
 

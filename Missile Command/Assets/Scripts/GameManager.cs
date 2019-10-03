@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     GameObject cityDestroyedMessage;
     int missilesDestroyed = 0;
     float cityDestroyedMessageViewLength = 3.0f;
+    bool sanFranciscoDestroyed = false;
+    bool newYorkCityDestroyed = false;
 
 
     private void Awake()
@@ -42,14 +44,40 @@ public class GameManager : MonoBehaviour
 
     public void CityDestroyed(string city)
     {
-        cityDestroyedMessage.GetComponent<Text>().text = city + " has been destroyed!";
-        cityDestroyedMessage.SetActive(true);
-        Invoke("HideCityDestroyedMessage", cityDestroyedMessageViewLength);
+        if(city == "San Francisco" && !sanFranciscoDestroyed)
+        {
+            sanFranciscoDestroyed = true;
+            cityDestroyedMessage.GetComponent<Text>().text = city + " has been destroyed!";
+            cityDestroyedMessage.SetActive(true);
+            Invoke("HideCityDestroyedMessage", cityDestroyedMessageViewLength);
+        }
+        else if(!newYorkCityDestroyed)
+        {
+            newYorkCityDestroyed = true;
+            cityDestroyedMessage.GetComponent<Text>().text = city + " has been destroyed!";
+            cityDestroyedMessage.SetActive(true);
+            Invoke("HideCityDestroyedMessage", cityDestroyedMessageViewLength);
+        }
+        else
+        {
+            Debug.Log(city + " has already been destroyed...");
+        }
+
+        //Check for Lose Condition
+        if(sanFranciscoDestroyed && newYorkCityDestroyed)
+        {
+            Invoke("GameOver", cityDestroyedMessageViewLength);
+        }
     }
 
     private void HideCityDestroyedMessage()
     {
         cityDestroyedMessage.SetActive(false);
         cityDestroyedMessage.GetComponent<Text>().text = "";
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Game Over...");
     }
 }
