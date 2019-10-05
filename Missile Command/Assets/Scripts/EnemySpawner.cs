@@ -9,6 +9,10 @@ public class EnemySpawner : MonoBehaviour
     float timeBetweenLaunches = 3.0f;
     [SerializeField]
     GameObject enemyMissilePrefab;
+    [SerializeField]
+    float timeSinceLastChange = 0;
+    [SerializeField]
+    float timeBetweenTimeChanges = 7.0f;
 
     //Not Visible in Editor
     float timeSinceLastLaunch = 0;
@@ -22,11 +26,27 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeSinceLastChange += Time.deltaTime;
+
         timeSinceLastLaunch += Time.deltaTime;
         if(timeSinceLastLaunch >= timeBetweenLaunches)
         {
             timeSinceLastLaunch = 0;
             LaunchEnemyMissile();
+        }
+
+        if(timeSinceLastChange >= timeBetweenTimeChanges)
+        {
+            timeSinceLastChange = 0f;
+            if (timeBetweenLaunches > 0.25f)
+            {
+                timeBetweenLaunches -= 0.25f;
+            }
+            else
+            {
+                timeBetweenLaunches = 0.25f;
+            }
+            timeBetweenTimeChanges += 2.0f;
         }
     }
 

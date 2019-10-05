@@ -11,13 +11,13 @@ public class Missile : MonoBehaviour
     Rigidbody2D rb2d;
     float speedModifier = 1f;
     float missileLifeSpan = 4f;
-    float explosionOffset = 0.1f;
+    float explosionOffset = 0.15f;
     
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.AddRelativeForce(targetPos*speedModifier, ForceMode2D.Impulse);
+        rb2d.AddRelativeForce(targetPos * speedModifier, ForceMode2D.Impulse);
         Destroy(this.gameObject, missileLifeSpan);
     }
 
@@ -36,7 +36,6 @@ public class Missile : MonoBehaviour
     {
         float xDifference = Mathf.Abs(transform.position.x - targetPos.x);
         float yDifference = Mathf.Abs(transform.position.y - targetPos.y);
-        //Debug.Log("xDiff " + xDifference.ToString() + " yDiff " + yDifference.ToString());
         if(xDifference < explosionOffset && yDifference < explosionOffset)
         {
             Explode();
