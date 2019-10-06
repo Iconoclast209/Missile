@@ -9,6 +9,13 @@ public class GameManager : MonoBehaviour
     Text textMissilesDestroyed;
     [SerializeField]
     GameObject cityDestroyedMessage;
+    [SerializeField]
+    GameObject gameOverPanel;
+    [SerializeField]
+    Text gameOverPanelText;
+    [SerializeField]
+    GameObject EnemySpawnerObject;
+
     int missilesDestroyed = 0;
     float cityDestroyedMessageViewLength = 3.0f;
     bool sanFranciscoDestroyed = false;
@@ -22,18 +29,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Right" + ScreenUtils.ScreenRight);
         Debug.Log("Top" + ScreenUtils.ScreenTop);
         Debug.Log("Bottom" + ScreenUtils.ScreenBottom);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //textMissilesDestroyed.text = missilesDestroyed.ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void MissileDestroyed()
@@ -78,6 +73,9 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game Over...");
+        gameOverPanelText.text = "YOU DESTROYED " + missilesDestroyed.ToString() + " MISSILES";
+        gameOverPanel.SetActive(true);
+        EnemySpawnerObject.SetActive(false);
     }
+
 }

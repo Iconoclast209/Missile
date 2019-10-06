@@ -32,4 +32,9 @@ public class EnemyMissile : MonoBehaviour
         gm.MissileDestroyed();
         Destroy(this.gameObject);
     }
+
+    public void ExplodeEnemyMissile()
+    {
+        Destroy(this.gameObject);
+    }
 }

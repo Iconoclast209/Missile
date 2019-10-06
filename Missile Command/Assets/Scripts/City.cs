@@ -21,13 +21,16 @@ public class City : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<EnemyMissile>() != null)
+        GameObject enemy = other.gameObject;
+
+        if (enemy.GetComponent<EnemyMissile>() != null)
         {
             //City Destroyed Message
             gm.CityDestroyed(cityName);
-
             //Destroy City
             sr.sprite = destroyedCity;
+            //Destroy Enemy Missile
+            enemy.GetComponent<EnemyMissile>().ExplodeEnemyMissile();
         }
     }
 }
